@@ -60,6 +60,8 @@ public ActionResult UpdateStudent(int id)
             }
             Console.WriteLine();
             Console.WriteLine();
+            
+            Console.WriteLine();
             oldstudent.Name = student.Name;
             oldstudent.RollNo = student.RollNo;
             oldstudent.Department = student.Department;
