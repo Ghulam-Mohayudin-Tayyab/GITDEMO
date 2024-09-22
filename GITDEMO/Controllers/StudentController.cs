@@ -58,7 +58,7 @@ public ActionResult UpdateStudent(int id)
             {
                 return HttpNotFound();
             }
-
+            Console.WriteLine();
             oldstudent.Name = student.Name;
             oldstudent.RollNo = student.RollNo;
             oldstudent.Department = student.Department;
