@@ -38,16 +38,16 @@ namespace GITDEMO.Controllers
         // Update a student's information (GET method to show form)
         [HttpGet]
        
-// Local changes (Update method)
-        public ActionResult Update(int id)
-        {
-            var student = students.FirstOrDefault(s => s.Id == id);
-            if (student == null)
-            {
-                return HttpNotFound();
-            }
-            return View(student);
-        }
+// Changes from GitHub (Update method)
+public ActionResult UpdateStudent(int id)
+{
+    var student = students.Find(s => s.Id == id);
+    if (student == null)
+    {
+        return HttpNotFound();
+    }
+    return View(student);
+}
 
         // Update student's information (POST method to save changes)
         [HttpPost]
