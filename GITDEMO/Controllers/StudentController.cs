@@ -35,5 +35,46 @@ namespace GITDEMO.Controllers
         {
             return View(students);
         }
+        // Update a student's information (GET method to show form)
+        [HttpGet]
+        public ActionResult Update(int id)
+        {
+            var student = students.FirstOrDefault(s => s.Id == id);
+            if (student == null)
+            {
+                return HttpNotFound();
+            }
+            return View(student);
+        }
+
+        // Update student's information (POST method to save changes)
+        [HttpPost]
+        public ActionResult Update(Student student)
+        {
+            var existingStudent = students.FirstOrDefault(s => s.Id == student.Id);
+            if (existingStudent == null)
+            {
+                return HttpNotFound();
+            }
+
+            existingStudent.Name = student.Name;
+            existingStudent.RollNo = student.RollNo;
+            existingStudent.Department = student.Department;
+
+            return RedirectToAction("Index");
+        }
+
+        // Delete a student
+        public ActionResult Delete(int id)
+        {
+            var student = students.FirstOrDefault(s => s.Id == id);
+            if (student != null)
+            {
+                students.Remove(student);
+            }
+
+            return RedirectToAction("Index");
+        }
+
     }
 }
