@@ -51,15 +51,15 @@ namespace GITDEMO.Controllers
         [HttpPost]
         public ActionResult Update(Student student)
         {
-            var existingStudent = students.FirstOrDefault(s => s.Id == student.Id);
-            if (existingStudent == null)
+            var oldstudent = students.FirstOrDefault(s => s.Id == student.Id);
+            if (oldstudent == null)
             {
                 return HttpNotFound();
             }
 
-            existingStudent.Name = student.Name;
-            existingStudent.RollNo = student.RollNo;
-            existingStudent.Department = student.Department;
+            oldstudent.Name = student.Name;
+            oldstudent.RollNo = student.RollNo;
+            oldstudent.Department = student.Department;
 
             return RedirectToAction("Index");
         }
