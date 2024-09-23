@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GITDEMO.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,23 +9,18 @@ namespace GITDEMO.Controllers
 {
     public class HomeController : Controller
     {
-        public ActionResult Index()
+        public ActionResult TeacherList()
         {
-            return View();
+            List<Teacher> teachers = new List<Teacher>()
+            {
+                new Teacher {Id = 1, Name = "Tayyab", Subject = "Programming Fundamental", Salary = 20000},
+                new Teacher {Id = 2, Name ="Adrees", Subject ="Information Security", Salary= 30000 },
+                new Teacher {Id = 3, Name ="Zain", Subject ="Artificial Intelligence", Salary= 40000 }
+
+            };
+            return View(teachers);
         }
 
-        public ActionResult About()
-        {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
-        }
     }
+       
 }
