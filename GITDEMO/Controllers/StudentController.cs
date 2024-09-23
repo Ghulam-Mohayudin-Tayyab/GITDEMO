@@ -14,7 +14,8 @@ namespace GITDEMO.Controllers
         // Action method to show form
         [HttpGet]
         public ActionResult Create()
-        {
+        {    
+            Console.WriteLine("Added by Ali.");
             return View();
         }
 
@@ -24,6 +25,7 @@ namespace GITDEMO.Controllers
         {
             if (ModelState.IsValid)
             {
+                Console.WriteLine("Added by Ali.");
                 students.Add(student);
                 return RedirectToAction("Index");
             }
@@ -33,6 +35,7 @@ namespace GITDEMO.Controllers
         // Action method to display the list of students
         public ActionResult Index()
         {
+            Console.WriteLine("Added by Ali.");
             return View(students);
         }
         // Update a student's information (GET method to show form)
@@ -41,6 +44,7 @@ namespace GITDEMO.Controllers
 // Changes from GitHub (Update method)
 public ActionResult UpdateStudent(int id)
 {
+    Console.WriteLine("Added by Ali.");
     var student = students.Find(s => s.Id == id);
     if (student == null)
     {
