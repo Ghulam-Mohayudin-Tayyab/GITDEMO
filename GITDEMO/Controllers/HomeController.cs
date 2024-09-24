@@ -16,7 +16,7 @@ namespace GITDEMO.Controllers
                 new Teacher {Id = 1, Name = "Tayyab", Subject = "Programming Fundamental", Salary = 20000},
                 new Teacher {Id = 2, Name ="Adrees", Subject ="Information Security", Salary= 30000 },
                 new Teacher {Id = 3, Name ="Zain", Subject ="Artificial Intelligence", Salary= 40000 }
-
+                 new Teacher {Id = 4, Name = "Tayyab", Subject = "Data Structure", Salary= 50000 }
             };
             return View(teachers);
         }
